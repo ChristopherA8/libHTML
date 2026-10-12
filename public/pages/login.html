@@ -3,28 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>libHTML | Login</title>
+    <title>libHTML</title>
     <link href="../css/global.css" rel="stylesheet" />
     <link href="../css/output.css" rel="stylesheet" />
   </head>
   <body class="flex flex-col h-screen justify-between">
     <!-- NAV BAR -->
     <div class="nav-bar flex items-center justify-between p-8">
-      <div class="flex items-center gap-3" onclick="toHome()">
-        <img class="size-10" src="../assets/icon.png" />
-        <div class="text-2xl font-bold">libHTML</div>
+      <div class="flex items-center lg:gap-4 gap-3" onclick="toHome()">
+        <img class="lg:size-20 size-10" src="../assets/icon.png" />
+        <div class="lg:text-4xl text-2xl font-bold">libHTML</div>
       </div>
-      <div class="text-lg font-medium">
+      <div class="lg:text-2xl text-lg font-medium">
         <span onclick="login()">login</span>
       </div>
     </div>
     <!-- MAIN SECTION -->
     <div class="flex flex-col items-center p-8 main-section">
-      <div class="font-medium text-3xl mb-5">Login</div>
-      <input type="text" class="bg-mist-100 m-1 p-1" placeholder="Username" />
+      <div class="font-medium lg:text-6xl text-3xl lg:mb-10 mb-5">Login</div>
+      <input
+        type="text"
+        class="bg-mist-100 m-1 lg:p-2 p-1"
+        placeholder="Username"
+      />
       <input
         type="password"
-        class="bg-mist-100 m-1 p-1"
+        class="bg-mist-100 m-1 lg:p-2 p-1"
         placeholder="Password"
       />
       <button
@@ -35,17 +39,19 @@
       </button>
     </div>
     <!-- FOOTER -->
-    <div class="footer flex justify-between items-center bg-mist-400 p-8">
+    <div
+      class="footer flex justify-between items-center bg-mist-400 lg:p-20 p-8"
+    >
       <div class="flex flex-col items-baseline">
-        <span class="font-medium text-mist-500 text-sm">Pages</span>
-        <ul class="text-mist-500 text-xs pt-1">
+        <span class="font-medium text-mist-500 lg:text-xl text-sm">Pages</span>
+        <ul class="text-mist-500 lg:text-lg text-xs pt-1">
           <li>About</li>
           <li>Login</li>
         </ul>
       </div>
       <div class="flex flex-col items-baseline">
-        <span class="font-medium text-mist-500 text-sm">Links</span>
-        <ul class="text-mist-500 text-xs pt-1">
+        <span class="font-medium text-mist-500 lg:text-xl text-sm">Links</span>
+        <ul class="text-mist-500 lg:text-lg text-xs pt-1">
           <li>
             <a target="_blank" href="https://github.com/ChristopherA8/libHTML"
               >Github</a
@@ -59,7 +65,7 @@
       <div><!-- SPACING --></div>
       <div><!-- SPACING --></div>
       <div class="flex flex-col items-baseline">
-        <div class="text-mist-500 text-xs">
+        <div class="text-mist-500 lg:text-lg text-xs">
           Written by hand ❤️<br />© Christopher Anderson
         </div>
       </div>
