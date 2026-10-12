@@ -1,0 +1,22 @@
+{
+  "name": "libHTML Server",
+  "version": "1.0.0",
+  "main": "src/server.js",
+  "scripts": {
+    "css": "npx @tailwindcss/cli -i public/css/tailwind.css -o public/css/output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "chalk": "^4.1.2",
+    "express": "^5.2.1",
+    "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.4"
+  }
+}
