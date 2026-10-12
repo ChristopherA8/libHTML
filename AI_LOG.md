@@ -30,3 +30,11 @@ Here is the output it gave me. I took inspiration from this for the server.js fi
 Prompt> `I switched from import chalk from "chalk"; in nodejs to const require and it doesn't work anymore`
 
 I was prompted to use chalk@4 version instead of the latest to continue using CommonJS instead of ESM
+
+### [Mon. Oct 12] Help with responsive hero banner
+
+Prompt> ```!!! Just tell me about what I am asking about
+
+I need this banner image to be responsive and have the height shrink on different sizes with this html tailwindcss site. How do I get it to shrink the entire hero div```
+
+And I pasted my index.html and global.css and it told me I needed to set the image width and height to full and set the object-fit css property to cover which makes sense with what I was seeing
