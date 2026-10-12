@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>libHTML</title>
+    <link href="./css/output.css" rel="stylesheet" />
+    <style>
+      body {
+        font-family: system-ui;
+      }
+
+      .hero-banner {
+        /* filter: brightness(35%); */
+        position: relative;
+        width: 100%;
+      }
+
+      .hero-dark-overlay {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        opacity: 0.7;
+      }
+
+      .hero-text-container {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAV BAR -->
+    <div class="nav-bar flex items-center justify-between p-8">
+      <div class="flex items-center gap-3">
+        <img class="size-10" src="./assets/icon.png" />
+        <div class="text-2xl font-bold">libHTML</div>
+      </div>
+      <div class="text-lg font-medium">
+        <span onclick="login()">login</span>
+      </div>
+    </div>
+    <!-- HERO BANNER -->
+    <div class="hero-banner">
+      <img src="./assets/hero-banner.jpg" />
+      <div class="hero-dark-overlay"></div>
+      <div
+        class="flex flex-col items-center justify-center hero-text-container"
+      >
+        <span class="font-medium text-4xl text-white">Practice</span>
+        <span class="hero-effect text-3xl text-purple-200">HTML</span>
+      </div>
+    </div>
+    <!-- MAIN SECTION -->
+    <div class="flex flex-col items-center p-8 main-section">
+      <div class="font-medium text-3xl">Learn Web Development</div>
+      <div class="text-lg">Practice as you learn</div>
+      <img class="p-8" src="./assets/screenshot.png" />
+    </div>
+    <!-- FOOTER -->
+    <div class="footer flex justify-between items-center bg-mist-400 p-8">
+      <div class="flex flex-col items-baseline">
+        <span class="font-medium text-mist-500 text-sm">Pages</span>
+        <ul class="text-mist-500 text-xs pt-1">
+          <li>About</li>
+          <li>Login</li>
+        </ul>
+      </div>
+      <div class="flex flex-col items-baseline">
+        <span class="font-medium text-mist-500 text-sm">Links</span>
+        <ul class="text-mist-500 text-xs pt-1">
+          <li>
+            <a target="_blank" href="https://github.com/ChristopherA8/libHTML"
+              >Github</a
+            >
+          </li>
+          <li><a target="_blank" href="mailto:canders@algebra.hr">Email</a></li>
+        </ul>
+        <!-- <div class="text-mist-500 text-sm">© Christopher Anderson</div> -->
+      </div>
+      <div><!-- SPACING --></div>
+      <div><!-- SPACING --></div>
+      <div><!-- SPACING --></div>
+      <div class="flex flex-col items-baseline">
+        <div class="text-mist-500 text-xs">
+          Written by hand ❤️<br />© Christopher Anderson
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    var text = ["HTML", "CSS", "JavaScript"];
+    var counter = 0;
+    var elem = document.querySelector(".hero-effect");
+    var inst = setInterval(change, 3000);
+
+    var i = 0;
+    var speed = 100;
+
+    function typeWriter() {
+      if (i < text[counter].length) {
+        elem.innerHTML += text[counter].charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      } else {
+        counter++;
+        i = 0;
+      }
+    }
+
+    function change() {
+      if (counter >= text.length) {
+        counter = 0;
+      }
+
+      elem.innerHTML = "";
+      typeWriter();
+    }
+
+    function login() {
+      console.log("logging in...");
+    }
+  </script>
+</html>
