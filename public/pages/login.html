@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>libHTML | Login</title>
+    <link href="../css/global.css" rel="stylesheet" />
+    <link href="../css/output.css" rel="stylesheet" />
+  </head>
+  <body class="flex flex-col h-screen justify-between">
+    <!-- NAV BAR -->
+    <div class="nav-bar flex items-center justify-between p-8">
+      <div class="flex items-center gap-3" onclick="toHome()">
+        <img class="size-10" src="../assets/icon.png" />
+        <div class="text-2xl font-bold">libHTML</div>
+      </div>
+      <div class="text-lg font-medium">
+        <span onclick="login()">login</span>
+      </div>
+    </div>
+    <!-- MAIN SECTION -->
+    <div class="flex flex-col items-center p-8 main-section">
+      <div class="font-medium text-3xl mb-5">Login</div>
+      <input type="text" class="bg-mist-100 m-1 p-1" placeholder="Username" />
+      <input
+        type="password"
+        class="bg-mist-100 m-1 p-1"
+        placeholder="Password"
+      />
+      <button
+        type="submit"
+        class="mt-3 pl-2 pr-2 pt-1 pb-1 bg-mist-100 hover:bg-mist-300 text-mist-700 font-medium rounded-md"
+      >
+        Submit
+      </button>
+    </div>
+    <!-- FOOTER -->
+    <div class="footer flex justify-between items-center bg-mist-400 p-8">
+      <div class="flex flex-col items-baseline">
+        <span class="font-medium text-mist-500 text-sm">Pages</span>
+        <ul class="text-mist-500 text-xs pt-1">
+          <li>About</li>
+          <li>Login</li>
+        </ul>
+      </div>
+      <div class="flex flex-col items-baseline">
+        <span class="font-medium text-mist-500 text-sm">Links</span>
+        <ul class="text-mist-500 text-xs pt-1">
+          <li>
+            <a target="_blank" href="https://github.com/ChristopherA8/libHTML"
+              >Github</a
+            >
+          </li>
+          <li><a target="_blank" href="mailto:canders@algebra.hr">Email</a></li>
+        </ul>
+        <!-- <div class="text-mist-500 text-sm">© Christopher Anderson</div> -->
+      </div>
+      <div><!-- SPACING --></div>
+      <div><!-- SPACING --></div>
+      <div><!-- SPACING --></div>
+      <div class="flex flex-col items-baseline">
+        <div class="text-mist-500 text-xs">
+          Written by hand ❤️<br />© Christopher Anderson
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    var text = ["HTML", "CSS", "JavaScript"];
+    var counter = 0;
+    var elem = document.querySelector(".hero-effect");
+    var inst = setInterval(change, 3000);
+
+    var i = 0;
+    var speed = 100;
+
+    function typeWriter() {
+      if (i < text[counter].length) {
+        elem.innerHTML += text[counter].charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      } else {
+        counter++;
+        i = 0;
+      }
+    }
+
+    function change() {
+      if (counter >= text.length) {
+        counter = 0;
+      }
+
+      elem.innerHTML = "";
+      typeWriter();
+    }
+
+    function login() {
+      document.location = "http://localhost:3000/pages/login.html";
+    }
+
+    function toHome() {
+      document.location = "http://localhost:3000/";
+    }
+  </script>
+</html>

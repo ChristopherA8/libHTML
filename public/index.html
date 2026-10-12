@@ -4,39 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>libHTML</title>
+    <link href="./css/global.css" rel="stylesheet" />
     <link href="./css/output.css" rel="stylesheet" />
-    <style>
-      body {
-        font-family: system-ui;
-      }
-
-      .hero-banner {
-        /* filter: brightness(35%); */
-        position: relative;
-        width: 100%;
-      }
-
-      .hero-dark-overlay {
-        position: absolute;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: black;
-        opacity: 0.7;
-      }
-
-      .hero-text-container {
-        position: absolute;
-        top: 0;
-        width: 100%;
-        height: 100%;
-      }
-    </style>
   </head>
-  <body>
+  <body class="flex flex-col h-screen justify-between">
     <!-- NAV BAR -->
     <div class="nav-bar flex items-center justify-between p-8">
-      <div class="flex items-center gap-3">
+      <div class="flex items-center gap-3" onclick="toHome()">
         <img class="size-10" src="./assets/icon.png" />
         <div class="text-2xl font-bold">libHTML</div>
       </div>
@@ -122,7 +96,11 @@
     }
 
     function login() {
-      console.log("logging in...");
+      document.location = "http://localhost:3000/pages/login.html";
+    }
+
+    function toHome() {
+      document.location = "http://localhost:3000/";
     }
   </script>
 </html>
