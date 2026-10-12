@@ -8,6 +8,11 @@
 <!-- 2400x891 actual image size -->
 
 ## Preview
+
 <div align="center">
 <img width="700" src="https://github.com/user-attachments/assets/4ebccbe2-e0b2-4ea7-a00d-c299a5257b53" />
 </div>
+
+## Credit
+
+https://stackoverflow.com/questions/59812003/tailwindcss-fixed-sticky-footer-on-the-bottom
