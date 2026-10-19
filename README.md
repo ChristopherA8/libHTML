@@ -13,6 +13,21 @@
 <img width="700" src="https://github.com/user-attachments/assets/4ebccbe2-e0b2-4ea7-a00d-c299a5257b53" />
 </div>
 
+## Database Architecture
+
+```SQL
+CREATE TABLE users (
+	user_id INTEGER PRIMARY KEY AUTOINCREMENT,
+	username TEXT NOT NULL UNIQUE,
+	password TEXT NOT NULL,
+	firstname TEXT,
+	lastname TEXT,
+	createdAt TEXT NOT NULL)
+```
+
 ## Credit
 
 https://stackoverflow.com/questions/59812003/tailwindcss-fixed-sticky-footer-on-the-bottom
+https://medium.com/@jasondotparse/add-user-authentication-to-your-node-expressjs-application-using-bcrypt-81bb0f618ab3
+https://www.geeksforgeeks.org/node-js/what-is-express-session-middleware-in-express/
+https://expressjs.com/en/5x/guide/routing/
