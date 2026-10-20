@@ -31,3 +31,5 @@ https://stackoverflow.com/questions/59812003/tailwindcss-fixed-sticky-footer-on-
 https://medium.com/@jasondotparse/add-user-authentication-to-your-node-expressjs-application-using-bcrypt-81bb0f618ab3
 https://www.geeksforgeeks.org/node-js/what-is-express-session-middleware-in-express/
 https://expressjs.com/en/5x/guide/routing/
+https://www.w3schools.com/nodejs/nodejs_api_auth.asp
+https://github.com/WiseLibs/better-sqlite3/blob/HEAD/docs/api.md#class-database
