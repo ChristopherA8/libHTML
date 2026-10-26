@@ -6,17 +6,24 @@
     <title>libHTML</title>
     <link href="./css/global.css" rel="stylesheet" />
     <link href="./css/output.css" rel="stylesheet" />
+    <script src="./js/main.js"></script>
   </head>
-  <body class="flex flex-col h-screen justify-between">
+  <body onload="isLoggedIn()" class="flex flex-col h-screen justify-between">
     <!-- NAV BAR -->
     <div class="nav-bar flex items-center justify-between p-8">
-      <div class="flex items-center lg:gap-4 gap-3" onclick="toHome()">
-        <img class="lg:size-20 size-10" src="./assets/icon.png" />
-        <div class="lg:text-4xl text-2xl font-bold">libHTML</div>
-      </div>
-      <div class="lg:text-2xl text-lg font-medium">
-        <span onclick="login()">login</span> •
-        <span onclick="about()"> about</span>
+      <a href="/">
+        <div class="flex items-center lg:gap-4 gap-3">
+          <img class="lg:size-20 size-10" src="../assets/icon.png" />
+          <div class="lg:text-4xl text-2xl font-bold">libHTML</div>
+        </div>
+      </a>
+      <div class="lg:text-2xl text-lg font-medium flex flex-row">
+        <span id="nav-login"><a href="/pages/login.html">login</a></span>
+        <span id="nav-logout" onclick="logout()" class="hidden"
+          ><a href="#">logout</a></span
+        >
+        &nbsp;•&nbsp;
+        <span><a href="/pages/about.html">about</a></span>
       </div>
     </div>
     <!-- HERO BANNER -->
@@ -100,14 +107,6 @@
 
       elem.innerHTML = "";
       typeWriter();
-    }
-
-    function login() {
-      document.location = "http://localhost:3000/pages/login.html";
-    }
-
-    function toHome() {
-      document.location = "http://localhost:3000/";
     }
   </script>
 </html>
