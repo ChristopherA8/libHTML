@@ -10,7 +10,8 @@
 ## Preview
 
 <div align="center">
-<img width="700" src="https://github.com/user-attachments/assets/4ebccbe2-e0b2-4ea7-a00d-c299a5257b53" />
+	<img width="800" src="https://github.com/user-attachments/assets/4ebccbe2-e0b2-4ea7-a00d-c299a5257b53" />
+	<!-- <img width="800" src="https://github.com/user-attachments/assets/7e53cd2d-342c-48e0-908d-0a42e7117e1f" /> -->
 </div>
 
 ## Database Architecture
