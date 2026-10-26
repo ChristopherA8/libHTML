@@ -71,7 +71,7 @@ Prompt>
 what type should my sqlite password column be to take a bcrypt hash
 ```
 
-Output
+Output>
 
 ```
 Your SQLite password column should be a TEXT data type.
@@ -126,7 +126,7 @@ How can I res.send the data from the latest created user
 this is an express nodejs better-sqlite3 app
 ```
 
-Output
+Output>
 
 ```js
 router.post("/create", (req, res) => {
@@ -191,7 +191,7 @@ router.post("/login", (req, res) => {
 I am getting errors like db.get is not a function
 ```
 
-Output
+Output>
 
 ```
 The problem is that you’re mixing two different SQLite libraries’ APIs. db.get(sql, params, callback) is the sqlite3 package’s callback style. You’re using better-sqlite3, which is synchronous: you prepare a statement first, then call .get() on the statement, not on db. There are no callbacks.
@@ -230,3 +230,67 @@ router.post("/login", (req, res) => {
   }
 });
 ```
+
+### [Wed. Oct 21] Troubleshooting duplicate form submission bug
+
+Prompt>
+
+```sh
+➜  libHTML git:(main) ✗ node .
+◇ injected env (2) from .env
+[SERVER] Server is running on http://localhost:3000
+[API] User created: (me)
+/Users/chris/Dev/Algebra/libHTML/src/routes/users.js:41
+    const info = insert.run(username, hash, new Date().toISOString());
+                        ^
+
+SqliteError: UNIQUE constraint failed: users.username
+    at /Users/chris/Dev/Algebra/libHTML/src/routes/users.js:41:25 {
+  code: 'SQLITE_CONSTRAINT_UNIQUE'
+}
+
+Node.js v23.10.0
+```
+
+```
+
+I am getting this error when creating a new user using my api endpoint, but the sqlite table still populates with the new user despite this error
+```
+
+```js
+router.post("/create", (req, res) => {
+  const { username, password } = req.body;
+
+  if (!username || !password) {
+    res
+      .status(400)
+      .send("Bad request; missing username or password field <._.<");
+    return;
+  }
+
+  const select = db
+    .prepare("SELECT 1 FROM users WHERE username = ?")
+    .get(username);
+  if (select) {
+    res.status(409).send("Username already exists");
+    return;
+  }
+```
+
+Output>
+
+```
+...
+The client is sending the request twice. Check the browser Network tab. Common culprits are a form that has both an onsubmit handler and a regular submit, a button with a click handler and a form submit, or a double-bound event listener in your frontend JS. Also, if you’re using something like Live Server, auto-reload can replay requests.
+...
+```
+
+Note>
+
+My problem was using a custom onSubmit on the form as well as an onSubmit on the button element which was sending the POST request twice
+
+### [Mon. Oct 26] misc.
+
+I used Claude to help me setup CodeMirror and bundling with ESBuild to be able to serve it statically. This is the most AI was used on this entire project which I feel is ok since this was purely to be able to setup and use an external resource which I didn't build or create myself to begin with, so learning the documentation for the CodeMirror drop-in code editor wasn't vital to this project.
+
+But for the record I wrote by hand the output claude gave me making sure I understood what was happening in the output code.
