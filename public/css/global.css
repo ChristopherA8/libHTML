@@ -1,5 +1,6 @@
 body {
   font-family: system-ui;
+  color: var(--color-mist-900);
 }
 
 .hero-banner {
@@ -21,4 +22,11 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
+}
+
+#editor .cm-editor {
+  height: 100%;
+}
+#editor .cm-scroller {
+  overflow: auto;
 }

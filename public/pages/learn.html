@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>libHTML | learn</title>
+    <link href="../css/global.css" rel="stylesheet" />
+    <link href="../css/output.css" rel="stylesheet" />
+    <script src="../js/main.js"></script>
+  </head>
+  <body onload="isLoggedIn()" class="flex flex-col h-screen justify-between">
+    <!-- NAV BAR -->
+    <div class="nav-bar flex items-center justify-between p-8">
+      <a href="/">
+        <div class="flex items-center lg:gap-4 gap-3">
+          <img class="lg:size-20 size-10" src="../assets/icon.png" />
+          <div class="lg:text-4xl text-2xl font-bold">libHTML</div>
+        </div>
+      </a>
+      <div class="lg:text-2xl text-lg font-medium flex flex-row">
+        <span id="nav-login"><a href="/pages/login.html">login</a></span>
+        <span id="nav-logout" onclick="logout()" class="hidden"
+          ><a href="#">logout</a></span
+        >
+        &nbsp;•&nbsp;
+        <span><a href="/pages/about.html">about</a></span>
+      </div>
+    </div>
+    <!-- MAIN SECTION -->
+    <div class="flex flex-row h-full w-full min-h-0">
+      <div
+        class="bg-mist-200 lg:w-50 w-40 shrink-0 lg:p-8 p-5 lg:text-base text-sm"
+      >
+        <span class="lg:text-lg text-base font-semibold text-mist-600"
+          >Lessons</span
+        >
+        <ul>
+          <li>
+            <span
+              onclick="loadLesson('intro')"
+              class="hover:text-purple-950 cursor-pointer"
+              >1. Intro to HTML</span
+            >
+          </li>
+          <li>
+            <span
+              onclick="loadLesson('basic')"
+              class="hover:text-purple-950 cursor-pointer"
+              >2. Basic tags</span
+            >
+          </li>
+          <li>
+            <span
+              onclick="loadLesson('test')"
+              class="hover:text-purple-950 cursor-pointer"
+              >3. Test</span
+            >
+          </li>
+          <li>
+            <span
+              onclick="loadLesson('forms')"
+              class="hover:text-purple-950 cursor-pointer"
+              >4. Forms</span
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div class="flex lg:flex-row flex-col flex-1 min-h-0 min-w-0">
+        <div id="editor" class="lg:w-1/2 lg:h-full h-1/2 overflow-auto"></div>
+        <iframe
+          id="renderFrame"
+          sandbox="allow-scripts allow-modals allow-popups"
+          class="lg:h-full w-full lg:w-1/2 h-1/2 bg-white"
+        ></iframe>
+      </div>
+    </div>
+    <!-- FOOTER -->
+    <div
+      class="footer flex justify-between items-center bg-mist-400 lg:p-20 p-8"
+    >
+      <div class="flex flex-col items-baseline">
+        <span class="font-medium text-mist-500 lg:text-xl text-sm">Pages</span>
+        <ul class="text-mist-500 lg:text-lg text-xs pt-1">
+          <li>About</li>
+          <li>Login</li>
+        </ul>
+      </div>
+      <div class="flex flex-col items-baseline">
+        <span class="font-medium text-mist-500 lg:text-xl text-sm">Links</span>
+        <ul class="text-mist-500 lg:text-lg text-xs pt-1">
+          <li>
+            <a target="_blank" href="https://github.com/ChristopherA8/libHTML"
+              >Github</a
+            >
+          </li>
+          <li><a target="_blank" href="mailto:canders@algebra.hr">Email</a></li>
+        </ul>
+        <!-- <div class="text-mist-500 text-sm">© Christopher Anderson</div> -->
+      </div>
+      <div><!-- SPACING --></div>
+      <div><!-- SPACING --></div>
+      <div><!-- SPACING --></div>
+      <div class="flex flex-col items-baseline">
+        <div class="text-mist-500 lg:text-lg text-xs">
+          Written by hand ❤️<br />© Christopher Anderson
+        </div>
+      </div>
+    </div>
+    <script src="../js/editor.bundle.js"></script>
+  </body>
+</html>
