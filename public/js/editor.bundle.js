@@ -28144,7 +28144,7 @@
     return EditorState.create({ doc: code2, extensions });
   };
   var view = new EditorView({
-    state: makeState(import_lessons.default.intro.code),
+    state: makeState(import_lessons.default.test.code),
     parent: document.getElementById("editor")
   });
   window.loadLesson = (id2) => {
@@ -28153,5 +28153,5 @@
     view.setState(makeState(lesson.code));
     renderFrame.srcdoc = lesson.code;
   };
-  renderFrame.srcdoc = import_lessons.default.intro.code;
+  renderFrame.srcdoc = import_lessons.default.test.code;
 })();

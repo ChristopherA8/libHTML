@@ -35,7 +35,7 @@ const makeState = (code) => {
 };
 
 const view = new EditorView({
-  state: makeState(lessons.intro.code),
+  state: makeState(lessons.test.code),
   parent: document.getElementById("editor"),
 });
 
@@ -46,4 +46,4 @@ window.loadLesson = (id) => {
   renderFrame.srcdoc = lesson.code;
 };
 
-renderFrame.srcdoc = lessons.intro.code;
+renderFrame.srcdoc = lessons.test.code;
