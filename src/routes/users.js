@@ -26,6 +26,14 @@ router.post("/create", (req, res) => {
     return;
   }
 
+  const select = db
+    .prepare("SELECT 1 FROM users WHERE username = ?")
+    .get(username);
+  if (select) {
+    res.status(409).send("Username already exists");
+    return;
+  }
+
   const insert = db.prepare(
     "INSERT INTO users (username, password, createdAt) VALUES (?, ?, ?)",
   );
