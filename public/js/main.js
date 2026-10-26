@@ -97,7 +97,7 @@ const login = () => {
     .then((json) => {
       const { token } = json;
       localStorage.setItem("token", token);
-      document.location = "/";
+      document.location = "/pages/learn.html";
     })
     .catch((err) => console.log(err));
 
