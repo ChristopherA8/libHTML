@@ -33,3 +33,4 @@ https://www.geeksforgeeks.org/node-js/what-is-express-session-middleware-in-expr
 https://expressjs.com/en/5x/guide/routing/
 https://www.w3schools.com/nodejs/nodejs_api_auth.asp
 https://github.com/WiseLibs/better-sqlite3/blob/HEAD/docs/api.md#class-database
+https://preline.co/docs/components/toasts.html
