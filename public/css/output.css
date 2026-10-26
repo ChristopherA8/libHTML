@@ -21298,6 +21298,27 @@
   .border-l-zinc-950 {
     border-left-color: var(--color-zinc-950);
   }
+  .bg-\[\#0D0D0D\] {
+    background-color: #0D0D0D;
+  }
+  .bg-\[\#0f0f0f\] {
+    background-color: #0f0f0f;
+  }
+  .bg-\[\#1f1f1f\] {
+    background-color: #1f1f1f;
+  }
+  .bg-\[\#111111\] {
+    background-color: #111111;
+  }
+  .bg-\[\#121212\] {
+    background-color: #121212;
+  }
+  .bg-\[\#262626\] {
+    background-color: #262626;
+  }
+  .bg-\[\#292929\] {
+    background-color: #292929;
+  }
   .bg-amber-50 {
     background-color: var(--color-amber-50);
   }
@@ -37263,6 +37284,22 @@
   @media (width >= 64rem) {
     .lg\:mb-10 {
       margin-bottom: calc(var(--spacing) * 10);
+    }
+    .lg\:size-14 {
+      width: calc(var(--spacing) * 14);
+      height: calc(var(--spacing) * 14);
+    }
+    .lg\:size-15 {
+      width: calc(var(--spacing) * 15);
+      height: calc(var(--spacing) * 15);
+    }
+    .lg\:size-16 {
+      width: calc(var(--spacing) * 16);
+      height: calc(var(--spacing) * 16);
+    }
+    .lg\:size-18 {
+      width: calc(var(--spacing) * 18);
+      height: calc(var(--spacing) * 18);
     }
     .lg\:size-20 {
       width: calc(var(--spacing) * 20);
