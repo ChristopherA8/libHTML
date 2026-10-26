@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>libHTML | login</title>
+    <link href="../css/global.css" rel="stylesheet" />
+    <link href="../css/output.css" rel="stylesheet" />
+    <script src="../js/main.js"></script>
+    <script src="../js/jquery.js"></script>
+  </head>
+  <body onload="isLoggedIn()" class="flex flex-col h-screen justify-between">
+    <!-- NAV BAR -->
+    <div class="nav-bar flex items-center justify-between p-6">
+      <a href="/">
+        <div class="flex items-center lg:gap-4 gap-3">
+          <img class="lg:size-16 size-10" src="../assets/icon.png" />
+          <div class="lg:text-4xl text-2xl font-bold">libHTML</div>
+        </div>
+      </a>
+      <div class="lg:text-2xl text-lg font-medium flex flex-row">
+        <span id="nav-login"><a href="/pages/login.html">login</a></span>
+        <span id="nav-profile" class="hidden cursor-pointer"
+          ><a href="/pages/profile.html">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.7"
+              stroke="currentColor"
+              class="size-10"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+              />
+            </svg> </a
+        ></span>
+      </div>
+    </div>
+    <!-- MAIN SECTION -->
+    <div class="flex flex-col items-center p-8">
+      <img
+        class="rounded-full h-30 hover:border-2 border-mist-500"
+        src="../assets/profile.jpg"
+        id="pfp"
+        onclick="pfpClicked()"
+      />
+      <div id="username" class="font-medium lg:text-5xl text-3xl m-5">
+        loading...
+      </div>
+      <div class="flex flex-col items-start">
+        <span class="p-1 text-mist-800">First name</span>
+        <input
+          id="firstname"
+          class="bg-mist-100 rounded-xl p-3 pt-2 pb-2"
+          placeholder="First name"
+        />
+      </div>
+      <div class="flex flex-col items-start">
+        <span class="p-1 text-mist-800">Last name</span>
+        <input
+          id="lastname"
+          class="bg-mist-100 rounded-xl p-3 pt-2 pb-2"
+          placeholder="Last name"
+        />
+      </div>
+      <div
+        class="mt-5 pl-2 pr-2 pt-1 pb-1 rounded-lg bg-mist-100 hover:bg-mist-300 text-red-500"
+        onclick="logout()"
+      >
+        Logout
+      </div>
+    </div>
+    <!-- FOOTER -->
+    <div
+      class="footer flex justify-between items-center bg-mist-200 lg:p-20 p-8"
+    >
+      <div class="flex flex-col items-baseline">
+        <span class="font-medium text-mist-500 lg:text-xl text-sm">Pages</span>
+        <ul class="text-mist-500 lg:text-lg text-xs pt-1">
+          <li>About</li>
+          <li>Login</li>
+        </ul>
+      </div>
+      <div class="flex flex-col items-baseline">
+        <span class="font-medium text-mist-500 lg:text-xl text-sm">Links</span>
+        <ul class="text-mist-500 lg:text-lg text-xs pt-1">
+          <li>
+            <a target="_blank" href="https://github.com/ChristopherA8/libHTML"
+              >Github</a
+            >
+          </li>
+          <li><a target="_blank" href="mailto:canders@algebra.hr">Email</a></li>
+        </ul>
+        <!-- <div class="text-mist-500 text-sm">© Christopher Anderson</div> -->
+      </div>
+      <div><!-- SPACING --></div>
+      <div><!-- SPACING --></div>
+      <div><!-- SPACING --></div>
+      <div class="flex flex-col items-baseline">
+        <div class="text-mist-500 lg:text-lg text-xs">
+          Written by hand ❤️<br />© Christopher Anderson
+        </div>
+      </div>
+    </div>
+    <script>
+      const pfpClicked = () => {
+        var fileDialog = $('<input type="file" accept="image/*">');
+        fileDialog.click();
+        fileDialog.on("change", onFileSelected);
+        return false;
+      };
+
+      var onFileSelected = function (e) {
+        console.log($(this)[0].files);
+      };
+    </script>
+  </body>
+</html>

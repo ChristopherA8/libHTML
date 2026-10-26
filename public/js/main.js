@@ -1,6 +1,6 @@
 const isLoggedIn = () => {
   document.getElementById("nav-login").style.display = "block";
-  document.getElementById("nav-logout").style.display = "none";
+  document.getElementById("nav-profile").style.display = "none";
 
   if (
     !localStorage.getItem("token") ||
@@ -30,7 +30,16 @@ const isLoggedIn = () => {
       try {
         const { user } = json;
         document.getElementById("nav-login").style.display = "none";
-        document.getElementById("nav-logout").style.display = "block";
+        document.getElementById("nav-profile").style.display = "block";
+
+        // /pages/profile
+        if (document.getElementById("username")) {
+          let firstname = user.firstname ? user.firstname : "Firstname";
+          let lastname = user.lastname ? user.lastname : "Lastname";
+          document.getElementById("username").innerText = user.username;
+          document.getElementById("firstname").value = firstname;
+          document.getElementById("lastname").value = lastname;
+        }
       } catch (err) {
         console.log(err);
       }
