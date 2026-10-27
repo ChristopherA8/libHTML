@@ -237,3 +237,10 @@ const setupForm = (name) => {
       break;
   }
 };
+
+/**
+ * Responsive toggle for hamburger menu
+ */
+const showSidebar = () => {
+  document.getElementById("sidebar").classList.toggle("hidden");
+};
