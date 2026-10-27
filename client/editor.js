@@ -35,7 +35,7 @@ const makeState = (code) => {
 };
 
 const view = new EditorView({
-  state: makeState(lessons.test.code),
+  state: makeState(lessons.intro.code),
   parent: document.getElementById("editor"),
 });
 
@@ -46,4 +46,17 @@ window.loadLesson = (id) => {
   renderFrame.srcdoc = lesson.code;
 };
 
-renderFrame.srcdoc = lessons.test.code;
+window.setupSidebar = () => {
+  const items = Object.entries(lessons)
+    .map(
+      ([id, lesson], i) => `<li>
+  <span onclick="loadLesson('${id}')" class="hover:text-purple-950 cursor-pointer">${i + 1}. ${lesson.title}</span>
+</li>`,
+    )
+    .join("");
+
+  document.getElementById("sidebar").innerHTML =
+    `<span class="lg:text-lg text-base font-semibold text-mist-600">HTML</span><ul>${items}</ul>`;
+};
+
+renderFrame.srcdoc = lessons.intro.code;
