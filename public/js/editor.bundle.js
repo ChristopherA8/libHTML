@@ -35,6 +35,7 @@
       var lessons2 = {
         intro: {
           title: "Introduction",
+          editor: false,
           code: `<!DOCTYPE html>
 <html>
   <head>
@@ -65,6 +66,7 @@
         },
         basic_tags: {
           title: "Basic tags",
+          editor: false,
           code: `<!DOCTYPE html>
 <html>
 <head>
@@ -127,6 +129,7 @@
         },
         attributes: {
           title: "Attributes",
+          editor: true,
           code: ``
         }
       };
@@ -28180,6 +28183,7 @@
   // client/editor.js
   var renderFrame = document.getElementById("renderFrame");
   var timer;
+  document.getElementById("renderFrame").classList.replace("lg:w-1/2", "w-full");
   var updatePreview = (code2) => {
     clearInterval(timer);
     timer = setTimeout(() => {
@@ -28209,6 +28213,13 @@
     if (!lesson) return;
     view.setState(makeState(lesson.code));
     renderFrame.srcdoc = lesson.code;
+    if (lesson.editor) {
+      document.getElementById("editor").classList.remove("hidden");
+      document.getElementById("renderFrame").classList.replace("w-full", "lg:w-1/2");
+    } else {
+      document.getElementById("editor").classList.add("hidden");
+      document.getElementById("renderFrame").classList.replace("lg:w-1/2", "w-full");
+    }
   };
   window.setupSidebar = () => {
     const items = Object.entries(import_lessons.default).map(
