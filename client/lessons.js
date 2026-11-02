@@ -158,9 +158,16 @@ const lessons = {
 `,
   },
   attributes: {
-    title: "Attributes",
+    title: "Tag Playground",
     editor: true,
-    code: ``,
+    code: `<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Try out some of the new tags you learned</h1>
+    <br />
+    <p>You can always refresh the page to clear everything to this state, or ctrl+z to undo</p>
+  </body>
+</html>`,
   },
 };
 
