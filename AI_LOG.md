@@ -294,3 +294,40 @@ My problem was using a custom onSubmit on the form as well as an onSubmit on the
 I used Claude to help me setup CodeMirror and bundling with ESBuild to be able to serve it statically. This is the most AI was used on this entire project which I feel is ok since this was purely to be able to setup and use an external resource which I didn't build or create myself to begin with, so learning the documentation for the CodeMirror drop-in code editor wasn't vital to this project.
 
 But for the record I wrote by hand the output claude gave me making sure I understood what was happening in the output code.
+
+### [Mon. Nov 2] Fix sidebar categories
+
+Prompt>
+
+Now change this to load the category such as I wrote here HTML from the category value in a given lesson object and group sidebar lessons by category
+
+Output>
+
+```js
+window.setupSidebar = () => {
+  const groups = {};
+  for (const [id, lesson] of Object.entries(lessons)) {
+    const category = lesson.category || "Other";
+    (groups[category] ??= []).push({ id, lesson });
+  }
+
+  const html = Object.entries(groups)
+    .map(([category, entries]) => {
+      const items = entries
+        .map(
+          ({ id, lesson }, i) => `<li>
+  <span onclick="loadLesson('${id}')" class="hover:text-purple-950 cursor-pointer">${i + 1}. ${lesson.title}</span>
+</li>`,
+        )
+        .join("");
+
+      return `<div class="mb-4">
+  <div class="lg:text-lg text-base font-semibold text-mist-600">${category}</div>
+  <ul class="list-none">${items}</ul>
+</div>`;
+    })
+    .join("");
+
+  document.getElementById("sidebar").innerHTML = html;
+};
+```
