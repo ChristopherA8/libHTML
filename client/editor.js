@@ -62,16 +62,29 @@ window.loadLesson = (id) => {
 };
 
 window.setupSidebar = () => {
-  const items = Object.entries(lessons)
-    .map(
-      ([id, lesson], i) => `<li>
+  const groups = {};
+  for (const [id, lesson] of Object.entries(lessons)) {
+    (groups[lesson.category] ??= []).push({ id, lesson });
+  }
+
+  const html = Object.entries(groups)
+    .map(([category, entries]) => {
+      const items = entries
+        .map(
+          ({ id, lesson }, i) => `<li>
   <span onclick="loadLesson('${id}')" class="hover:text-purple-950 cursor-pointer">${i + 1}. ${lesson.title}</span>
 </li>`,
-    )
+        )
+        .join("");
+
+      return `<div class="mb-4">
+  <div class="lg:text-lg text-base font-semibold text-mist-600">${category}</div>
+  <ul class="list-none">${items}</ul>
+</div>`;
+    })
     .join("");
 
-  document.getElementById("sidebar").innerHTML =
-    `<span class="lg:text-lg text-base font-semibold text-mist-600">HTML</span><ul>${items}</ul>`;
+  document.getElementById("sidebar").innerHTML = html;
 };
 
 renderFrame.srcdoc = lessons.intro.code;
