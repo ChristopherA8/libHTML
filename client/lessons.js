@@ -1,6 +1,7 @@
 const lessons = {
   intro: {
     title: "Introduction",
+    editor: false,
     code: `<!DOCTYPE html>
 <html>
   <head>
@@ -31,6 +32,7 @@ const lessons = {
   },
   basic_tags: {
     title: "Basic tags",
+    editor: false,
     code: `<!DOCTYPE html>
 <html>
 <head>
@@ -93,6 +95,7 @@ const lessons = {
   },
   attributes: {
     title: "Attributes",
+    editor: true,
     code: ``,
   },
 };

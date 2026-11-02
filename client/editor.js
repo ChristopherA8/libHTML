@@ -11,6 +11,9 @@ import { tailwindCompletion } from "./tailwind";
 const renderFrame = document.getElementById("renderFrame");
 let timer;
 
+// on page load
+document.getElementById("renderFrame").classList.replace("lg:w-1/2", "w-full");
+
 const updatePreview = (code) => {
   clearInterval(timer);
   timer = setTimeout(() => {
@@ -44,6 +47,18 @@ window.loadLesson = (id) => {
   if (!lesson) return;
   view.setState(makeState(lesson.code));
   renderFrame.srcdoc = lesson.code;
+
+  if (lesson.editor) {
+    document.getElementById("editor").classList.remove("hidden");
+    document
+      .getElementById("renderFrame")
+      .classList.replace("w-full", "lg:w-1/2");
+  } else {
+    document.getElementById("editor").classList.add("hidden");
+    document
+      .getElementById("renderFrame")
+      .classList.replace("lg:w-1/2", "w-full");
+  }
 };
 
 window.setupSidebar = () => {
