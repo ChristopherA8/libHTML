@@ -1,6 +1,7 @@
 const isLoggedIn = () => {
   document.getElementById("nav-login").style.display = "block";
   document.getElementById("nav-profile").style.display = "none";
+  document.getElementById("nav-learn").style.display = "none";
 
   if (
     !localStorage.getItem("token") ||
@@ -30,6 +31,7 @@ const isLoggedIn = () => {
       try {
         const { user } = json;
         document.getElementById("nav-login").style.display = "none";
+        document.getElementById("nav-learn").style.display = "block";
         document.getElementById("nav-profile").style.display = "block";
 
         // /pages/profile
