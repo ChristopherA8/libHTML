@@ -12,6 +12,7 @@
     onload="
       isLoggedIn();
       setupSidebar();
+      loadLesson('intro');
     "
     class="flex flex-col h-screen justify-between"
   >
@@ -81,7 +82,7 @@
         ></div>
         <iframe
           id="renderFrame"
-          sandbox="allow-scripts allow-modals allow-popups"
+          sandbox="allow-scripts allow-modals allow-popups allow-popups-to-escape-sandbox"
           class="lg:h-full w-full lg:w-1/2 h-1/2 bg-white"
         ></iframe>
       </div>
