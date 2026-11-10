@@ -160,9 +160,9 @@ const lessons = {
   `,
   },
 
-  attributes: {
+  tag_playground: {
     title: "Tag Playground",
-    category: "Playground",
+    category: "HTML",
     editor: true,
     code: `<!DOCTYPE html>
 <html>
@@ -172,6 +172,144 @@ const lessons = {
     <p>You can always refresh the page to clear everything to this state, or ctrl+z to undo</p>
   </body>
 </html>`,
+  },
+
+  intro_css: {
+    title: "Introduction",
+    category: "CSS",
+    editor: false,
+    code: `<!DOCTYPE html>
+  <html>
+    <head>
+      <script src="https://cdn.tailwindcss.com"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+      <script src="../js/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script>
+      <style>
+        .example-font {
+          font-family: fantasy;
+        }
+        .example-font2 {
+          font-family: system-ui, fantasy;
+        }
+        .example-font3 {
+          font-family: system-ui;
+          color: yellowgreen;
+          font-weight: 1000;
+        }
+      </style>
+    </head>
+    <body class="m-10">
+    <h1 class="text-3xl font-sans font-semibold border-b-4">Intro to CSS</h1>
+    <div class="bg-gray-100 m-7 p-5 rounded-lg text-gray-700 flex flex-col border-t-8 border-t-green-900">
+      <div class="flex flex-row gap-2 text-lg items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.7" stroke="currentColor" class="size-6 stroke-green-900">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+        </svg>
+        <span class="font-bold text-green-900">Info</span>
+      </div>
+      <span>CSS tells the browser how to style the elements on your page</span>
+    </div>
+
+      <p>CSS can be added directly to an element like this</p>
+      <pre class="w-min text-sm border-8 m-4"><code class="language-html">&lt;p style="color: blue;"&gt;Some text&lt;/p&gt;</code></pre>
+      <p>Or more commonly as a block of styles called a <span class="text-green-900 font-bold">class</span> which can be reused</p>
+      <pre class="w-min text-sm border-8 m-4"><code class="language-html">&lt;style&gt;
+  .apples {
+    color: blue;
+  }
+&lt;/style&gt;
+&lt;p class="apples"&gt;this will be blue&lt;/p&gt;
+&lt;p class="apples"&gt;and this too&lt;/p&gt;</code></pre>
+    </body>
+  </html>
+  `,
+  },
+  fonts: {
+    title: "Text Styling",
+    category: "CSS",
+    editor: false,
+    code: `<!DOCTYPE html>
+  <html>
+    <head>
+      <script src="https://cdn.tailwindcss.com"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+      <script src="../js/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script>
+      <style>
+        .example-font {
+          font-family: fantasy;
+        }
+        .example-font2 {
+          font-family: system-ui, fantasy;
+        }
+        .example-font3 {
+          font-family: system-ui;
+          color: yellowgreen;
+          font-weight: 1000;
+        }
+      </style>
+    </head>
+    <body class="m-10">
+    <h1 class="text-3xl font-sans font-semibold border-b-4">Text Styling</h1>
+      
+      <!-- <ul> stands for 'unordered list' Fill a list with <li> 'list item' elements -->
+      <ul class="[&>*]:mt-5">
+        <li>
+          <h2 class="text-2xl mb-5">Fonts</h2>
+          <div class="flex ml-7 mr-7 border-8">
+      <pre class="w-min text-sm"><code class="language-css">.font-example1 {
+  font-family: fantasy;
+}</code></pre>
+            <span class="flex flex-1 text-center items-center justify-center example-font">
+              This text is using the fantasy font
+            </span>
+          </div>
+        </li>
+        <li>
+          <div class="flex mt-6 ml-7 mr-7 border-8">
+      <pre class="w-min text-sm"><code class="language-css">.font-example2 {
+  font-family: system-ui, fantasy;
+}</code></pre>
+            <span class="flex flex-1 text-center items-center justify-center example-font2">
+              This text will use the fantasy font if system-ui isn't available 
+            </span>
+          </div>
+        </li>
+        <li>
+          <div class="flex mt-6 ml-7 mr-7 border-8">
+      <pre class="w-min text-sm"><code class="language-css">.font-example3 {
+  font-family: system-ui;
+  color: yellowgreen;
+  font-weight: 1000;
+}</code></pre>
+            <span class="flex flex-1 text-center items-center justify-center example-font3">
+              This text is rather ugly
+            </span>
+          </div>
+        </li>
+      </ul>
+    </body>
+  </html>
+  `,
+  },
+  css_playground: {
+    title: "CSS Playground",
+    category: "CSS",
+    editor: true,
+    code: `<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .someclass {
+        color: blue;
+      }
+    </style>
+  </head>
+</html>
+<body>
+  <p class="someclass">Try to make your own styles</p>
+</body>`,
   },
 };
 
